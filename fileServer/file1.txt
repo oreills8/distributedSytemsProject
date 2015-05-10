@@ -1,0 +1,33 @@
+WLAN Ad-hoc mode – Lab 5
+Question 1: What is the throughput in ad hoc mode from peer1 to peer2? (use the --bandwidth option in order to get the maximum achievable throughput) 
+
+Maximum achievable = 54.1 MBits/sec 
+Actually achieved = 21.7 MBits/sec 
+Question 2: Compare the throughput between peer1 and peer2 in ad-hoc mode (section 2.3.1) with the throughput measured from client1 to ap in infrastructure mode (section 1.2.3). Is it higher or lower than in ad-hoc mode? Why? 
+Result for configured access point for Lab 4 - 28.8 Mbit/s
+The throughput for the ad-hoc configuration is lower than the maximum throughput for the configuration with access point, the basic service set. For the infrastructure mode the communication to the internet is controlled by the access point. The protocol and the rules for communication are dictated by the access point. This protocol and rules motors the communication and these rule and congestion control increase the overall efficiency of the network. This is the reason that the infrastructure mode has a higher throughput. 
+Question 3: Compare the throughput between peer1 and peer2 in ad-hoc mode (section 2.3.1) with the throughput measured from client1 to client2 in infrastructure mode (section 1.2.3). Is it higher or lower than in ad-hoc mode? Why?
+Result for configured access point for Lab 4 - 15 Mbit/s
+The throughput for the ad-hoc configuration is higher than the throughput for the configuration with   access point, the basic service set. The reason for this that the actual throughput for the ad-hoc network does not have to go through the access point as it did in the last configuration. Because all the packets do not have to go through the access point the throughput of the network is higher. 
+
+Question 4: (Theoretical question) Assume that the total wireless throughput is X Mbit/s. Fill in the table with the available throughputs for the data streams (as a fraction of X) for two different wireless configurations. In the first configuration all nodes are operating in Ad-Hoc mode and client 3 behaves as a gateway to the internet as well. In the second configuration a dedicated access point is used (see Figure 2.2) as a gateway. Assume there are no bandwidth limitations to the internet.
+
+ 	AD_HOC	infrastructure
+client1 to client 2 and client 1 to client 1	 ½	¼
+client 1 to client 2 and client 2 to gateway	 ½ 	1/3    
+
+Figure 1 shows how the fractions in this table were arrived at. The second diagram on the left shows the ad-hoc with the first configuration. There are two streams of communication that need to occur, the communication from client 1 to client 2 and the communication for client 1 back to client 2. The fact that there are two data streams of communication means that the throughput is half what it would be for one stream. The second diagram on the right shows the same communication form the infrastructure mode. By looking at this diagram it is clear that there is twice the number of data streams of communication than in the Ad-Hoc mode. The reason for this is that all the communication in the Ad-Hoc mode must go through the access point and for this case; this doubles the amount of data streams of communication that needs to occur for this communication. For this reason the throughput from this mode is lower than the throughput from the Ad-Hoc mode, it is a quarter of the total wireless throughput. 
+ The third diagram on the left shows the Ad-Hoc with the second communication, this is the communication from client 1 to client 2 and client 2 to the gateway. In Ad-Hoc mode this communication requires two data streams for this communication to be completed. This is the same number of streams as for the first communication and because of this it has the same theoretical throughput of a half of the total wireless throughput. On the other hand for infrastructure mode the theoretical throughput is again lower than for the Ad-Hoc mode. This can be seen in the last diagram on the right. Similar to the first communication in order for client 1 to talk to client 2 the data stream must go through the access point. This means that the throughput of the configuration is lower than for the Ad-hoc configuration.  However when the clients wish to communicate with the gateway then the number of data streams is the same for both configurations. For the infrastructure configuration this communication requires three data streams, the result of this is that the theoretical throughput is one third of the total wireless throughput.  
+ 
+Figure 1
+
+
+
+Question 5: Which configuration in the previous question (Ad-Hoc or infrastructure) has the highest throughput?
+In the Question 4 the configuration with the highest theoretical output was the Ad-Hoc configuration. The reason for this was the communication between the two clients did not need to go through the access point. However this theoretical throughput does not take into account the result that was found in question 2, which is that communication to the gateway is faster with an infrastructure because the congestion control and protocols monitor the communication. This is not the case in an AD-HOC configuration where another client is the access to the internet as the other client does not control the communication that goes through it.  
+
+Question 6: Why would you then use the other one?
+The infrastructure mode would be used in places where a proper planning, design and deployment are required. Where there is an enormous quantity of nodes trying to access the medium, they need a higher hierarchy controller to coordinate the medium sharing and thus be able to achieve the best possible throughput and/or fairness.
+ 
+Whilst ad-hoc mode should be essentially used for peer-to-peer communication, where it is impossible to have prior planning, situations such as natural disasters, where the network infrastructure is compromised and rescue teams need to communicate, or even in self-organizing sensor networks.
+
